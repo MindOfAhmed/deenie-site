@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deenie - دينيّ | Your Companion for Quran Reflection</title>
+    <meta name="description" content="Read, reflect, and grow with the Quran. Deenie brings you a beautiful Quran reader, Tajweed lessons, prayer times, Qibla, Athkar, and a private reflection journal." />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --green: #1e6b4a;
+        --green-dark: #165a3c;
+        --green-light: #d1fae5;
+        --green-mid: #065f46;
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --bg: #f9fafb;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #fff;
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      body.ar {
+        direction: rtl;
+        font-family: "Geeza Pro", "Arabic UI Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+
+      .nav-logo {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover { color: var(--green); }
+
+      .lang-toggle {
+        display: flex;
+        gap: 6px;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .lang-btn.active,
+      .lang-btn:hover {
+        background: var(--green);
+        border-color: var(--green);
+        color: #fff;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(160deg, #0d3d28 0%, #1e6b4a 60%, #2d8f63 100%);
+        color: #fff;
+        text-align: center;
+        padding: 100px 24px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .hero-eyebrow {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.65;
+        margin-bottom: 20px;
+      }
+
+      .hero-arabic {
+        font-size: clamp(22px, 4vw, 30px);
+        font-family: "Geeza Pro", "Arabic UI Text", serif;
+        opacity: 0.85;
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 7vw, 64px);
+        font-weight: 800;
+        letter-spacing: -1px;
+        margin-bottom: 12px;
+        line-height: 1.1;
+      }
+
+      .hero-sub {
+        font-size: clamp(16px, 2.5vw, 20px);
+        opacity: 0.75;
+        max-width: 520px;
+        margin: 0 auto 40px;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        color: var(--green);
+        font-size: 16px;
+        font-weight: 700;
+        padding: 14px 32px;
+        border-radius: 99px;
+        transition: transform 0.15s, box-shadow 0.15s;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      }
+
+      .hero-cta svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .hero-note {
+        margin-top: 16px;
+        font-size: 13px;
+        opacity: 0.5;
+      }
+
+      /* VERSE BANNER */
+      .verse-banner {
+        background: var(--green-light);
+        border-top: 1px solid #a7f3d0;
+        border-bottom: 1px solid #a7f3d0;
+        text-align: center;
+        padding: 28px 24px;
+      }
+
+      .verse-banner .arabic {
+        font-size: 22px;
+        font-family: "Geeza Pro", "Arabic UI Text", serif;
+        color: var(--green-mid);
+        margin-bottom: 8px;
+      }
+
+      .verse-banner .translation {
+        font-size: 14px;
+        color: var(--green-mid);
+        opacity: 0.8;
+      }
+
+      /* FEATURES */
+      .features {
+        background: var(--bg);
+        padding: 80px 24px;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 560px;
+        margin: 0 auto 56px;
+      }
+
+      .section-eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 12px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(26px, 4vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+
+      .section-header p {
+        font-size: 16px;
+        color: var(--muted);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .feature-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+
+      .feature-card:hover {
+        box-shadow: 0 8px 32px rgba(30,107,74,0.1);
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        font-size: 28px;
+        margin-bottom: 14px;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+
+      .feature-card p {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* PRIVACY SECTION */
+      .privacy-section {
+        background: #fff;
+        padding: 80px 24px;
+        text-align: center;
+      }
+
+      .privacy-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--green-light);
+        color: var(--green-mid);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 99px;
+        margin-bottom: 24px;
+      }
+
+      .privacy-section h2 {
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 800;
+        max-width: 520px;
+        margin: 0 auto 16px;
+        letter-spacing: -0.5px;
+      }
+
+      .privacy-section > p {
+        font-size: 16px;
+        color: var(--muted);
+        max-width: 480px;
+        margin: 0 auto 40px;
+      }
+
+      .privacy-points {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .privacy-point {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .privacy-point::before {
+        content: "✓";
+        color: var(--green);
+        font-weight: 800;
+      }
+
+      /* CTA SECTION */
+      .cta-section {
+        background: linear-gradient(160deg, #0d3d28 0%, #1e6b4a 100%);
+        color: #fff;
+        text-align: center;
+        padding: 80px 24px;
+      }
+
+      .cta-section h2 {
+        font-size: clamp(26px, 4vw, 40px);
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .cta-section p {
+        font-size: 16px;
+        opacity: 0.7;
+        margin-bottom: 36px;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-section .hero-cta {
+        margin-bottom: 16px;
+      }
+
+      .cta-note {
+        font-size: 13px;
+        opacity: 0.45;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #fff;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      footer a { color: var(--green); }
+      footer a:hover { text-decoration: underline; }
+      footer .footer-links { margin-bottom: 8px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+      /* UTILS */
+      [data-ar] { display: none; }
+      body.ar [data-en] { display: none; }
+      body.ar [data-ar] { display: revert; }
+
+      @media (max-width: 600px) {
+        .nav-links { gap: 12px; }
+        .features-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <span class="nav-logo">Deenie · دينيّ</span>
+      <div class="nav-links">
+        <a href="support.html">
+          <span data-en>Support</span>
+          <span data-ar>الدعم</span>
+        </a>
+        <a href="privacy.html">
+          <span data-en>Privacy</span>
+          <span data-ar>الخصوصية</span>
+        </a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">ع</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-eyebrow">
+        <span data-en>A Quran Companion for iOS</span>
+        <span data-ar>رفيقك القرآني على iOS</span>
+      </p>
+      <div class="hero-arabic">دينيّ</div>
+      <h1>Deenie</h1>
+      <p class="hero-sub">
+        <span data-en>Read, reflect, and grow with the Quran — beautifully designed, completely private.</span>
+        <span data-ar>اقرأ، تدبّر، وانمُ مع القرآن الكريم — تصميم جميل وخصوصية تامة.</span>
+      </p>
+      <a class="hero-cta" href="https://apps.apple.com/app/deenie" id="appstore-hero">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span data-en>Download on the App Store</span>
+        <span data-ar>حمّل من App Store</span>
+      </a>
+      <p class="hero-note">
+        <span data-en>Free · No ads · No account required</span>
+        <span data-ar>مجاني · بلا إعلانات · لا حساب مطلوب</span>
+      </p>
+    </section>
+
+    <!-- VERSE BANNER -->
+    <div class="verse-banner">
+      <p class="arabic">أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ</p>
+      <p class="translation">
+        <span data-en>"Will they not then reflect upon the Quran?" — An-Nisa 4:82</span>
+        <span data-ar>"أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ" — النساء 4:82</span>
+      </p>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="section-header">
+        <p class="section-eyebrow">
+          <span data-en>Everything you need</span>
+          <span data-ar>كل ما تحتاجه</span>
+        </p>
+        <h2>
+          <span data-en>Built for everyday Muslims</span>
+          <span data-ar>صُمِّم للمسلم في حياته اليومية</span>
+        </h2>
+        <p>
+          <span data-en>One app for reading, learning, reflecting, and practicing — no bloat, no distractions.</span>
+          <span data-ar>تطبيق واحد للقراءة والتعلم والتأمل والممارسة — بلا تعقيد أو إزعاج.</span>
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <span class="feature-icon">📖</span>
+          <h3><span data-en>Quran Reader</span><span data-ar>قارئ القرآن</span></h3>
+          <p>
+            <span data-en>Authentic Uthmani script with tajweed color coding. Audio recitations from Alafasy, Abdul Basit, Al-Sudais, and more. Bookmarks, highlights, translations, and tafseer at a tap.</span>
+            <span data-ar>رسم عثماني أصيل مع تلوين أحكام التجويد. تلاوات من العفاسي وعبد الباسط والسديس وغيرهم. إشارات مرجعية وتظليلات وترجمات وتفسير بنقرة واحدة.</span>
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🔍</span>
+          <h3><span data-en>Word Lookup</span><span data-ar>البحث عن الكلمات</span></h3>
+          <p>
+            <span data-en>Tap any word to see its root, grammar, morphology, and meaning. Powered by the Hans Wehr Arabic dictionary and the full Quranic morphology corpus.</span>
+            <span data-ar>انقر على أي كلمة لترى جذرها وإعرابها وصرفها ومعناها. مدعوم بمعجم هانز فير وقاعدة بيانات الإعراب القرآني الكامل.</span>
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📔</span>
+          <h3><span data-en>Reflection Journal</span><span data-ar>يومية التدبّر</span></h3>
+          <p>
+            <span data-en>Write personal reflections on individual ayahs. Tag entries, record your feelings, and build a private library of insights — stored only on your device.</span>
+            <span data-ar>دوّن تأملاتك الشخصية في الآيات. صنّف مدوناتك وسجّل مشاعرك وابنِ مكتبة خاصة من الأفكار — مخزّنة على جهازك فقط.</span>
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🎓</span>
+          <h3><span data-en>Tajweed Learning</span><span data-ar>تعلّم التجويد</span></h3>
+          <p>
+            <span data-en>Structured lessons from beginner to advanced. Audio examples, common mistakes, and self-assessed exercises with XP and streak tracking.</span>
+            <span data-ar>دروس منظمة من المبتدئ إلى المتقدم. نماذج صوتية وأخطاء شائعة وتمارين تقييم ذاتي مع نقاط وسلاسل إنجاز.</span>
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🕌</span>
+          <h3><span data-en>Prayer Times & Qibla</span><span data-ar>أوقات الصلاة والقبلة</span></h3>
+          <p>
+            <span data-en>Accurate, on-device prayer time calculations using GPS. Multiple calculation methods. Live compass Qibla finder with haptic feedback when aligned.</span>
+            <span data-ar>حساب دقيق لأوقات الصلاة على الجهاز باستخدام GPS. طرق حساب متعددة. بوصلة قبلة حية مع اهتزاز تنبيهي عند التوجه الصحيح.</span>
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📿</span>
+          <h3><span data-en>Athkar & Tasbeeh</span><span data-ar>الأذكار والتسبيح</span></h3>
+          <p>
+            <span data-en>Morning, evening, after-prayer, and before-sleep Athkar with translations. Custom Tasbeeh counters with goals and haptic feedback.</span>
+            <span data-ar>أذكار الصباح والمساء وبعد الصلاة وقبل النوم مع الترجمات. عدادات تسبيح مخصصة مع أهداف واهتزاز تنبيهي.</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="privacy-section">
+      <div class="privacy-pill">
+        <span>🔒</span>
+        <span data-en>Privacy First</span>
+        <span data-ar>الخصوصية أولاً</span>
+      </div>
+      <h2>
+        <span data-en>Your data never leaves your device</span>
+        <span data-ar>بياناتك لا تغادر جهازك أبدًا</span>
+      </h2>
+      <p>
+        <span data-en>No accounts. No ads. No analytics. No tracking. Everything you do in Deenie stays on your phone.</span>
+        <span data-ar>لا حسابات. لا إعلانات. لا تحليلات. لا تتبع. كل ما تفعله في Deenie يبقى على هاتفك.</span>
+      </p>
+      <div class="privacy-points">
+        <div class="privacy-point">
+          <span data-en>No user accounts</span>
+          <span data-ar>لا حسابات مستخدمين</span>
+        </div>
+        <div class="privacy-point">
+          <span data-en>No ads</span>
+          <span data-ar>لا إعلانات</span>
+        </div>
+        <div class="privacy-point">
+          <span data-en>No analytics or tracking</span>
+          <span data-ar>لا تحليلات أو تتبع</span>
+        </div>
+        <div class="privacy-point">
+          <span data-en>No data sold or shared</span>
+          <span data-ar>لا بيع أو مشاركة للبيانات</span>
+        </div>
+        <div class="privacy-point">
+          <span data-en>Prayer times calculated on-device</span>
+          <span data-ar>أوقات الصلاة محسوبة على الجهاز</span>
+        </div>
+        <div class="privacy-point">
+          <span data-en>Journal stored locally only</span>
+          <span data-ar>اليومية مخزّنة محليًا فقط</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>
+        <span data-en>Begin your journey</span>
+        <span data-ar>ابدأ رحلتك</span>
+      </h2>
+      <p>
+        <span data-en>Free to download. No sign-up. Open the app and start reading.</span>
+        <span data-ar>مجاني للتنزيل. لا تسجيل. افتح التطبيق وابدأ القراءة.</span>
+      </p>
+      <a class="hero-cta" href="https://apps.apple.com/app/deenie" id="appstore-cta">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span data-en>Download on the App Store</span>
+        <span data-ar>حمّل من App Store</span>
+      </a>
+      <p class="cta-note">
+        <span data-en>iOS · Free</span>
+        <span data-ar>iOS · مجاني</span>
+      </p>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="support.html">
+          <span data-en>Support</span><span data-ar>الدعم</span>
+        </a>
+        <a href="privacy.html">
+          <span data-en>Privacy Policy</span><span data-ar>سياسة الخصوصية</span>
+        </a>
+        <a href="terms.html">
+          <span data-en>Terms of Service</span><span data-ar>شروط الخدمة</span>
+        </a>
+      </div>
+      <p>
+        &copy; 2026 Deenie &mdash; Ahmed Alabbas.
+        <span data-en>All rights reserved.</span>
+        <span data-ar>جميع الحقوق محفوظة.</span>
+      </p>
+    </footer>
+
+    <script>
+      function setLang(lang) {
+        document.body.classList.toggle('ar', lang === 'ar');
+        document.documentElement.lang = lang;
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      }
+    </script>
+  </body>
+</html>

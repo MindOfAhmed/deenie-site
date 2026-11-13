@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service — Deenie</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: #f9fafb;
+        color: #1a1a1a;
+        line-height: 1.7;
+      }
+
+      body.ar {
+        direction: rtl;
+        font-family: "Geeza Pro", "Arabic UI Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      }
+
+      header {
+        background: #1e6b4a;
+        color: #fff;
+        padding: 48px 24px 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      header .app-name {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 8px;
+      }
+
+      header h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      header p {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      .lang-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 6px;
+      }
+
+      body.ar .lang-toggle {
+        right: auto;
+        left: 20px;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 24px;
+        border: 1px solid #e5e7eb;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e6b4a;
+        margin-bottom: 16px;
+      }
+
+      p {
+        margin-bottom: 12px;
+        color: #374151;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin: 12px 0 12px 20px;
+        color: #374151;
+      }
+
+      body.ar ul {
+        margin: 12px 20px 12px 0;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      a {
+        color: #1e6b4a;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 13px;
+        color: #9ca3af;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      footer a {
+        color: #1e6b4a;
+      }
+
+      [data-ar] { display: none; }
+      body.ar [data-en] { display: none; }
+      body.ar [data-ar] { display: revert; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">ع</button>
+      </div>
+      <p class="app-name">Deenie</p>
+      <h1>
+        <span data-en>Terms of Service</span>
+        <span data-ar>شروط الخدمة</span>
+      </h1>
+      <p>
+        <span data-en>Last updated: February 2026</span>
+        <span data-ar>آخر تحديث: فبراير 2026</span>
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>
+          <span data-en>Acceptance of Terms</span>
+          <span data-ar>قبول الشروط</span>
+        </h2>
+        <p>
+          <span data-en>
+            By downloading or using Deenie ("the App"), you agree to be bound by
+            these Terms of Service. If you do not agree to these terms, please do
+            not use the App.
+          </span>
+          <span data-ar>
+            بتنزيل تطبيق Deenie ("التطبيق") أو استخدامه، فإنك توافق على الالتزام
+            بشروط الخدمة هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام
+            التطبيق.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            These Terms apply to all users of the App, including users who access
+            it through the Apple App Store or Google Play Store.
+          </span>
+          <span data-ar>
+            تنطبق هذه الشروط على جميع مستخدمي التطبيق، بما في ذلك المستخدمون
+            الذين يصلون إليه عبر Apple App Store أو Google Play Store.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>About Deenie</span>
+          <span data-ar>عن Deenie</span>
+        </h2>
+        <p>
+          <span data-en>
+            Deenie is an Islamic app providing Quran reading, Tajweed learning,
+            prayer times, Qibla direction, Athkar, and personal reflection
+            journaling. The App is provided by Ahmed Alabbas, trading under the
+            name mindofahmed ("we," "us," or "our").
+          </span>
+          <span data-ar>
+            Deenie تطبيق إسلامي يوفر قراءة القرآن الكريم، وتعلّم التجويد،
+            وأوقات الصلاة، واتجاه القبلة، والأذكار، ويوميات التدبر الشخصي.
+            يُقدَّم التطبيق من قِبَل أحمد العباس، المعروف باسم mindofahmed
+            ("نحن" أو "لنا" أو "خاصتنا").
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Permitted Use</span>
+          <span data-ar>الاستخدام المسموح به</span>
+        </h2>
+        <p>
+          <span data-en>
+            You may use Deenie for personal, non-commercial purposes only. You
+            agree not to:
+          </span>
+          <span data-ar>
+            يُسمح لك باستخدام Deenie للأغراض الشخصية غير التجارية فقط.
+            توافق على عدم:
+          </span>
+        </p>
+        <ul>
+          <li>
+            <span data-en>Reverse engineer, decompile, or disassemble any part of the App</span>
+            <span data-ar>إجراء هندسة عكسية أو فك تجميع أي جزء من التطبيق</span>
+          </li>
+          <li>
+            <span data-en>Use the App for any unlawful or harmful purpose</span>
+            <span data-ar>استخدام التطبيق لأي غرض غير قانوني أو ضار</span>
+          </li>
+          <li>
+            <span data-en>Attempt to extract or scrape Quran text or audio content from the App in bulk</span>
+            <span data-ar>محاولة استخراج أو جمع نص القرآن أو المحتوى الصوتي من التطبيق بشكل مجمّع</span>
+          </li>
+          <li>
+            <span data-en>Distribute, resell, or sublicense access to the App or its content</span>
+            <span data-ar>توزيع أو إعادة بيع أو منح ترخيص فرعي للوصول إلى التطبيق أو محتواه</span>
+          </li>
+          <li>
+            <span data-en>Remove or alter any copyright, trademark, or other proprietary notices in the App</span>
+            <span data-ar>إزالة أو تعديل أي إشعارات حقوق الملكية أو العلامات التجارية في التطبيق</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Quran Content and Attribution</span>
+          <span data-ar>محتوى القرآن والإسناد</span>
+        </h2>
+        <p>
+          <span data-en>
+            The Quran text displayed in Deenie is sourced from the
+            <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer">Al-Quran Cloud API</a>
+            and uses the Uthmani script. Audio recitations are provided by the
+            Islamic Network via the same API. All Quranic content remains the word
+            of Allah (ﷻ) and is presented with the utmost respect and care.
+          </span>
+          <span data-ar>
+            يُستقى نص القرآن الكريم المعروض في Deenie من
+            <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer">واجهة Al-Quran Cloud</a>
+            ويستخدم الرسم العثماني. تُقدَّم التلاوات الصوتية من خلال الشبكة الإسلامية
+            عبر الواجهة ذاتها. يبقى محتوى القرآن كلامَ الله (ﷻ) ويُعرض بأقصى
+            درجات الاحترام والعناية.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            Prayer time calculations are performed on-device using the open-source
+            <a href="https://github.com/batoulapps/adhan-js" target="_blank" rel="noopener noreferrer">Adhan library</a>.
+            Prayer times are estimates based on your location and standard
+            calculation methods; they may differ slightly from your local mosque
+            or authority. Always verify prayer times with your local Islamic
+            center for obligatory prayers.
+          </span>
+          <span data-ar>
+            تُحسَب أوقات الصلاة على جهازك باستخدام مكتبة
+            <a href="https://github.com/batoulapps/adhan-js" target="_blank" rel="noopener noreferrer">Adhan</a>
+            مفتوحة المصدر. أوقات الصلاة تقديرية مبنية على موقعك وطرق الحساب
+            المعيارية؛ وقد تختلف قليلًا عن مسجدك المحلي أو الجهة الدينية
+            المختصة. احرص دائمًا على التحقق من أوقات الصلاة لدى مركزك الإسلامي
+            المحلي للصلوات الفريضة.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            Tajweed rules, lesson content, and explanations in the App are
+            intended for educational purposes. We encourage users to seek guidance
+            from qualified scholars and teachers for formal Quran learning.
+          </span>
+          <span data-ar>
+            أحكام التجويد ومحتوى الدروس والشروح في التطبيق مُعدَّة للأغراض
+            التعليمية. نشجع المستخدمين على طلب التوجيه من علماء ومعلمين مؤهلين
+            لتعلّم القرآن الكريم بصورة رسمية.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Intellectual Property</span>
+          <span data-ar>الملكية الفكرية</span>
+        </h2>
+        <p>
+          <span data-en>
+            All original content in the App — including its design, graphics, user
+            interface, and educational material — is the property of Ahmed Alabbas
+            / mindofahmed and is protected by applicable copyright and
+            intellectual property laws.
+          </span>
+          <span data-ar>
+            جميع المحتوى الأصلي في التطبيق — بما في ذلك التصميم والرسومات
+            وواجهة المستخدم والمواد التعليمية — هو ملك لأحمد العباس / mindofahmed
+            ومحمي بموجب قوانين حقوق النشر والملكية الفكرية المعمول بها.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            The Quran text itself is in the public domain. Third-party content
+            (API data, open-source libraries) remains subject to its own
+            respective licenses.
+          </span>
+          <span data-ar>
+            نص القرآن الكريم في حد ذاته ملك عام. يخضع محتوى الطرف الثالث
+            (بيانات الواجهة البرمجية، والمكتبات مفتوحة المصدر) لتراخيصه الخاصة.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>User Content</span>
+          <span data-ar>محتوى المستخدم</span>
+        </h2>
+        <p>
+          <span data-en>
+            Content you create in the App — such as journal entries (Tadabbur),
+            notes, and bookmarks — is stored locally on your device and belongs to
+            you. We do not access, transmit, or store your personal content on our
+            servers.
+          </span>
+          <span data-ar>
+            المحتوى الذي تنشئه في التطبيق — مثل مدخلات اليوميات (التدبر)
+            والملاحظات والإشارات المرجعية — مخزّن محليًا على جهازك وهو ملك لك.
+            نحن لا نصل إليه، ولا ننقله، ولا نخزّنه على خوادمنا.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            You are solely responsible for any content you create and for
+            maintaining backups of data you wish to preserve.
+          </span>
+          <span data-ar>
+            أنت المسؤول الوحيد عن أي محتوى تنشئه، وعن الاحتفاظ بنسخ احتياطية
+            من البيانات التي ترغب في حفظها.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Disclaimer of Warranties</span>
+          <span data-ar>إخلاء مسؤولية الضمانات</span>
+        </h2>
+        <p>
+          <span data-en>
+            Deenie is provided "as is" and "as available" without warranties of
+            any kind, either express or implied. We do not warrant that:
+          </span>
+          <span data-ar>
+            يُقدَّم تطبيق Deenie "كما هو" و"كما هو متاح" دون ضمانات من أي نوع،
+            سواء صريحة أو ضمنية. لا نضمن:
+          </span>
+        </p>
+        <ul>
+          <li>
+            <span data-en>The App will be uninterrupted, error-free, or free of viruses or harmful components</span>
+            <span data-ar>أن يكون التطبيق غير منقطع أو خاليًا من الأخطاء أو الفيروسات أو المكونات الضارة</span>
+          </li>
+          <li>
+            <span data-en>Prayer times will be perfectly accurate for your specific location or calculation method preference</span>
+            <span data-ar>أن تكون أوقات الصلاة دقيقة تمامًا لموقعك المحدد أو طريقة الحساب المفضلة لديك</span>
+          </li>
+          <li>
+            <span data-en>Quran content retrieved from third-party APIs will always be available</span>
+            <span data-ar>أن يكون محتوى القرآن المسترجع من واجهات الطرف الثالث متاحًا دائمًا</span>
+          </li>
+          <li>
+            <span data-en>The App will meet your specific religious or scholarly requirements</span>
+            <span data-ar>أن يلبّي التطبيق متطلباتك الدينية أو العلمية المحددة</span>
+          </li>
+        </ul>
+        <p>
+          <span data-en>
+            To the fullest extent permitted by applicable law, we disclaim all
+            warranties, express or implied, regarding the App and its content.
+          </span>
+          <span data-ar>
+            بالقدر الأقصى المسموح به بموجب القانون المعمول به، نُخلي مسؤوليتنا
+            عن جميع الضمانات، الصريحة منها والضمنية، المتعلقة بالتطبيق ومحتواه.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Limitation of Liability</span>
+          <span data-ar>تحديد المسؤولية</span>
+        </h2>
+        <p>
+          <span data-en>
+            To the maximum extent permitted by law, Ahmed Alabbas / mindofahmed
+            shall not be liable for any indirect, incidental, special,
+            consequential, or punitive damages arising from your use of or
+            inability to use the App, even if we have been advised of the
+            possibility of such damages.
+          </span>
+          <span data-ar>
+            بالقدر الأقصى المسموح به قانونًا، لن يكون أحمد العباس / mindofahmed
+            مسؤولًا عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية
+            ناجمة عن استخدامك للتطبيق أو عدم قدرتك على استخدامه، حتى لو أُبلغنا
+            بإمكانية حدوث مثل هذه الأضرار.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            Our total liability to you for any claim arising from these Terms or
+            your use of the App shall not exceed the amount you paid for the App
+            (if any) in the twelve months preceding the claim.
+          </span>
+          <span data-ar>
+            لن تتجاوز مسؤوليتنا الإجمالية تجاهك عن أي مطالبة ناشئة عن هذه الشروط
+            أو استخدامك للتطبيق المبلغَ الذي دفعته مقابل التطبيق (إن وجد)
+            في الاثني عشر شهرًا السابقة للمطالبة.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Third-Party Services</span>
+          <span data-ar>خدمات الطرف الثالث</span>
+        </h2>
+        <p>
+          <span data-en>
+            The App connects to third-party APIs to function. These services are
+            independent of Deenie and subject to their own terms of service. We
+            are not responsible for the availability, accuracy, or conduct of any
+            third-party service.
+          </span>
+          <span data-ar>
+            يتصل التطبيق بواجهات برمجية خارجية لتأدية وظائفه. هذه الخدمات
+            مستقلة عن Deenie وخاضعة لشروط خدمتها الخاصة. لسنا مسؤولين عن
+            توافر أي خدمة طرف ثالث أو دقتها أو سلوكها.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            Your use of Deenie on iOS is also subject to Apple's
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Licensed Application End User License Agreement</a>.
+          </span>
+          <span data-ar>
+            يخضع استخدامك لتطبيق Deenie على iOS أيضًا لـ
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">اتفاقية ترخيص المستخدم النهائي للتطبيقات المرخصة من Apple</a>.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Changes to These Terms</span>
+          <span data-ar>التغييرات على هذه الشروط</span>
+        </h2>
+        <p>
+          <span data-en>
+            We may update these Terms of Service from time to time. When we do, we
+            will update the "Last updated" date at the top of this page. Material
+            changes will be communicated through an update notice in the App where
+            reasonably practicable.
+          </span>
+          <span data-ar>
+            قد نحدّث شروط الخدمة هذه من وقت لآخر. عند القيام بذلك، سنحدّث
+            تاريخ "آخر تحديث" في أعلى هذه الصفحة. سيتم إبلاغك بالتغييرات
+            الجوهرية من خلال إشعار داخل التطبيق حيثما كان ذلك ممكنًا.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            Your continued use of the App after changes take effect constitutes
+            your acceptance of the updated Terms.
+          </span>
+          <span data-ar>
+            استمرارك في استخدام التطبيق بعد سريان التغييرات يُعدّ قبولًا
+            للشروط المحدّثة.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Governing Law</span>
+          <span data-ar>القانون الحاكم</span>
+        </h2>
+        <p>
+          <span data-en>
+            These Terms shall be governed by and construed in accordance with the
+            laws of the United Kingdom, without regard to its conflict of law
+            provisions.
+          </span>
+          <span data-ar>
+            تخضع هذه الشروط وتُفسَّر وفقًا لقوانين المملكة المتحدة، بصرف النظر
+            عن أحكام تعارض القوانين فيها.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Contact</span><span data-ar>التواصل</span></h2>
+        <p>
+          <span data-en>
+            If you have questions about these Terms, please contact us
+            <a href="mailto:mindofahmed@gmail.com">here</a>.
+          </span>
+          <span data-ar>
+            إذا كانت لديك أسئلة حول هذه الشروط، يرجى التواصل معنا
+            <a href="mailto:mindofahmed@gmail.com">هنا</a>.
+          </span>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="privacy.html">
+          <span data-en>Privacy Policy</span>
+          <span data-ar>سياسة الخصوصية</span>
+        </a>
+        &nbsp;·&nbsp;
+        &copy; 2026 Deenie.
+        <span data-en>All rights reserved.</span>
+        <span data-ar>جميع الحقوق محفوظة.</span>
+      </p>
+    </footer>
+
+    <script>
+      function setLang(lang) {
+        document.body.classList.toggle('ar', lang === 'ar');
+        document.documentElement.lang = lang;
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      }
+    </script>
+  </body>
+</html>

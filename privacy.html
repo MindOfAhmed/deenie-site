@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Deenie</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: #f9fafb;
+        color: #1a1a1a;
+        line-height: 1.7;
+      }
+
+      body.ar {
+        direction: rtl;
+        font-family: "Geeza Pro", "Arabic UI Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      }
+
+      header {
+        background: #1e6b4a;
+        color: #fff;
+        padding: 48px 24px 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      header .app-name {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 8px;
+      }
+
+      header h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      header p {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      .lang-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 6px;
+      }
+
+      body.ar .lang-toggle {
+        right: auto;
+        left: 20px;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 24px;
+        border: 1px solid #e5e7eb;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e6b4a;
+        margin-bottom: 16px;
+      }
+
+      p {
+        margin-bottom: 12px;
+        color: #374151;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin: 12px 0 12px 20px;
+        color: #374151;
+      }
+
+      body.ar ul {
+        margin: 12px 20px 12px 0;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      a {
+        color: #1e6b4a;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #d1fae5;
+        color: #065f46;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 10px;
+        border-radius: 99px;
+        margin-bottom: 12px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 13px;
+        color: #9ca3af;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      footer a {
+        color: #1e6b4a;
+      }
+
+      [data-ar] { display: none; }
+      body.ar [data-en] { display: none; }
+      body.ar [data-ar] { display: revert; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">ع</button>
+      </div>
+      <p class="app-name">Deenie</p>
+      <h1>
+        <span data-en>Privacy Policy</span>
+        <span data-ar>سياسة الخصوصية</span>
+      </h1>
+      <p>
+        <span data-en>Last updated: October 2026</span>
+        <span data-ar>آخر تحديث: أكتوبر 2026</span>
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2><span data-en>Overview</span><span data-ar>نظرة عامة</span></h2>
+        <p>
+          <span data-en>
+            Deenie is a Quran reading and Islamic practice app. We designed it
+            with privacy as a core principle:
+            <strong>your personal data never leaves your device</strong>. We do
+            not operate user accounts, we do not collect personal information, and
+            we do not sell or share any data with third parties.
+          </span>
+          <span data-ar>
+            Deenie تطبيق لقراءة القرآن الكريم وممارسة الشعائر الإسلامية. صمّمناه
+            مع الخصوصية كمبدأ أساسي:
+            <strong>بياناتك الشخصية لا تغادر جهازك أبدًا</strong>. لا نُدير
+            حسابات مستخدمين، ولا نجمع معلومات شخصية، ولا نبيع أو نشارك أي بيانات
+            مع أطراف ثالثة.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            This policy explains what limited technical data is accessed, why, and
+            how it is handled.
+          </span>
+          <span data-ar>
+            توضّح هذه السياسة البيانات التقنية المحدودة التي يتم الوصول إليها،
+            والسبب في ذلك، وكيفية التعامل معها.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Data Stored on Your Device</span>
+          <span data-ar>البيانات المخزّنة على جهازك</span>
+        </h2>
+        <p>
+          <span data-en>
+            All of the following is stored locally on your device only, using your
+            device's secure local storage. We never have access to it and it is
+            never transmitted to our servers.
+          </span>
+          <span data-ar>
+            جميع ما يلي مخزّن محليًا على جهازك فقط، باستخدام التخزين المحلي
+            الآمن لجهازك. لا يمكننا الوصول إليه أبدًا ولا يُرسَل إلى خوادمنا.
+          </span>
+        </p>
+        <ul>
+          <li>
+            <span data-en><strong>Reading progress</strong> — your current page and last-read ayah</span>
+            <span data-ar><strong>تقدم القراءة</strong> — الصفحة الحالية وآخر آية قرأتها</span>
+          </li>
+          <li>
+            <span data-en><strong>Reading streak history</strong> — dates on which you read, used to calculate your streak</span>
+            <span data-ar><strong>سجل سلسلة القراءة</strong> — التواريخ التي قرأت فيها، لحساب سلسلتك المتواصلة</span>
+          </li>
+          <li>
+            <span data-en><strong>Bookmarks and highlights</strong> — ayahs you have bookmarked or highlighted</span>
+            <span data-ar><strong>الإشارات المرجعية والتمييزات</strong> — الآيات التي أضفت إليها إشارات أو ميّزتها</span>
+          </li>
+          <li>
+            <span data-en><strong>Journal entries (Tadabbur)</strong> — personal reflections and notes you write</span>
+            <span data-ar><strong>مدخلات اليوميات (التدبر)</strong> — تأملاتك وملاحظاتك الشخصية</span>
+          </li>
+          <li>
+            <span data-en><strong>Tasbeeh counters</strong> — your custom dhikr counters and counts</span>
+            <span data-ar><strong>عدادات التسبيح</strong> — عدادات الذكر المخصصة وأعدادها</span>
+          </li>
+          <li>
+            <span data-en><strong>App preferences</strong> — theme, language, font size, reader mode, selected reciter, notification settings</span>
+            <span data-ar><strong>تفضيلات التطبيق</strong> — المظهر، اللغة، حجم الخط، وضع القارئ، القارئ المختار، إعدادات الإشعارات</span>
+          </li>
+          <li>
+            <span data-en><strong>Recently read surahs</strong> — used to show suggestions on the home screen</span>
+            <span data-ar><strong>السور المقروءة مؤخرًا</strong> — لعرض الاقتراحات على الشاشة الرئيسية</span>
+          </li>
+        </ul>
+        <p>
+          <span data-en>
+            This data is private to your device. If you delete the app, this data
+            is deleted with it. If you change devices, this data does not transfer
+            unless you use Apple iCloud or Google Drive backup (subject to their
+            own privacy policies).
+          </span>
+          <span data-ar>
+            هذه البيانات خاصة بجهازك. إذا حذفت التطبيق، تُحذف معه. إذا غيّرت
+            جهازك، لن تنتقل هذه البيانات إلا إذا استخدمت النسخ الاحتياطي عبر
+            Apple iCloud أو Google Drive (وفق سياسات الخصوصية الخاصة بهما).
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Location Data</span><span data-ar>بيانات الموقع</span></h2>
+        <span class="badge">
+          <span data-en>Only when you use Prayer Times or Qibla</span>
+          <span data-ar>فقط عند استخدام أوقات الصلاة أو القبلة</span>
+        </span>
+        <p>
+          <span data-en>
+            Deenie requests your device location solely to calculate accurate
+            local prayer times and the Qibla direction. Location data is processed
+            on-device using the open-source Adhan library.
+          </span>
+          <span data-ar>
+            يطلب تطبيق Deenie موقع جهازك فقط لحساب أوقات الصلاة المحلية الدقيقة
+            واتجاه القبلة. تتم معالجة بيانات الموقع على جهازك باستخدام مكتبة
+            Adhan مفتوحة المصدر.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            <strong>Your location is never sent to our servers.</strong>
+            To pick the right calculation method for your country, Deenie asks
+            your phone's built-in location service (Google on Android, Apple on
+            iOS) to turn your coordinates into a country and city name, at most
+            about once a day. Your last location is kept on your device only, so
+            prayer times and reminders work offline, and it is deleted when you
+            delete the app.
+          </span>
+          <span data-ar>
+            <strong>لا يُرسَل موقعك أبدًا إلى خوادمنا.</strong>
+            لاختيار طريقة الحساب المناسبة لبلدك، يطلب دينيّ من خدمة الموقع
+            المدمجة في هاتفك (Google على أندرويد وApple على iOS) تحويل إحداثياتك
+            إلى اسم البلد والمدينة، مرة واحدة يوميًا على الأكثر. يُحفظ آخر موقع
+            لك على جهازك فقط، لتعمل مواقيت الصلاة والتنبيهات دون اتصال، ويُحذف
+            عند حذف التطبيق.
+          </span>
+        </p>
+        <p>
+          <span data-en>
+            You can deny location permission and the app will remain functional;
+            Prayer Times and Qibla features will be unavailable until permission
+            is granted.
+          </span>
+          <span data-ar>
+            يمكنك رفض إذن الموقع وسيظل التطبيق يعمل؛ لكن ميزتَي أوقات الصلاة
+            والقبلة لن تكونا متاحتين حتى يُمنح الإذن.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Push Notifications</span><span data-ar>الإشعارات</span></h2>
+        <p>
+          <span data-en>
+            If you enable prayer time notifications, Deenie schedules them locally
+            on your device. Notifications are generated and delivered entirely
+            on-device — no notification server is involved and no data about your
+            notification preferences is sent anywhere.
+          </span>
+          <span data-ar>
+            إذا فعّلت إشعارات أوقات الصلاة، يقوم التطبيق بجدولتها محليًا على
+            جهازك. تُنشأ الإشعارات وتُسلَّم كليًا على الجهاز — لا يوجد خادم
+            إشعارات، ولا تُرسَل أي بيانات تتعلق بتفضيلاتك إلى أي مكان.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Third-Party Services</span><span data-ar>خدمات الطرف الثالث</span></h2>
+        <p>
+          <span data-en>
+            Deenie connects to the following external services to retrieve Quran
+            content. These requests contain only what is needed to fetch the
+            content (such as a page, surah or verse number, or the words you
+            search for) and no personal information.
+          </span>
+          <span data-ar>
+            يتصل تطبيق Deenie بالخدمات الخارجية التالية لاسترجاع محتوى القرآن
+            الكريم. تتضمن هذه الطلبات ما يلزم لجلب المحتوى فقط (مثل رقم الصفحة
+            أو السورة أو الآية، أو الكلمات التي تبحث عنها) ولا تتضمن أي معلومات
+            شخصية.
+          </span>
+        </p>
+        <ul>
+          <li>
+            <span data-en>
+              <strong>Al-Quran Cloud API (alquran.cloud)</strong>: used to fetch
+              Quran text (Uthmani script), translations, and audio recitations.
+              Requests include only a page or surah number. No personal data is
+              included. Recitation audio is streamed from its content network,
+              cdn.islamic.network. Search requests include the words you search
+              for. See their
+              <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer">website</a>
+              for their own terms.
+            </span>
+            <span data-ar>
+              <strong>واجهة برمجة Al-Quran Cloud (alquran.cloud)</strong>: تُستخدم
+              لجلب نص القرآن الكريم (الرسم العثماني) والترجمات والتلاوات الصوتية.
+              تتضمن الطلبات رقم الصفحة أو السورة فقط، ولا تشمل أي بيانات شخصية.
+              تُبثّ التلاوات الصوتية من شبكة المحتوى التابعة لها
+              cdn.islamic.network. وتتضمن طلبات البحث الكلمات التي تبحث عنها.
+              راجع
+              <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer">موقعهم</a>
+              لشروطهم الخاصة.
+            </span>
+          </li>
+          <li>
+            <span data-en>
+              <strong>Quran.com API (api.quran.com)</strong>: used for word-by-word
+              meanings, transliteration, and Tafsir As-Sa'di. Requests include only a verse number
+              and your app language.
+            </span>
+            <span data-ar>
+              <strong>واجهة برمجة Quran.com (api.quran.com)</strong>: تُستخدم لمعاني
+              الكلمات كلمةً كلمة ونطقها، ولتفسير السعدي. تتضمن الطلبات رقم الآية ولغة التطبيق فقط.
+            </span>
+          </li>
+          <li>
+            <span data-en>
+              <strong>Expo Updates (expo.dev)</strong>: the app checks for content and
+              bug-fix updates. The check includes the platform, the app version
+              and a random installation identifier that is not linked to you.
+            </span>
+            <span data-ar>
+              <strong>تحديثات Expo (expo.dev)</strong>: يتحقق التطبيق من توفر تحديثات
+              المحتوى وإصلاح الأخطاء. يتضمن ذلك نوع النظام وإصدار التطبيق ومعرّفًا
+              عشوائيًا للتثبيت غير مرتبط بك.
+            </span>
+          </li>
+          <li>
+            <span data-en>
+              <strong>Your phone's location service (Google on Android, Apple on
+              iOS)</strong>: converts your coordinates into a country and city, as
+              described under Location Data.
+            </span>
+            <span data-ar>
+              <strong>خدمة الموقع في هاتفك (Google على أندرويد وApple على iOS)</strong>:
+              تحوّل إحداثياتك إلى اسم البلد والمدينة، كما هو موضح في قسم بيانات
+              الموقع.
+            </span>
+          </li>
+        </ul>
+        <p>
+          <span data-en>
+            We do not use any analytics SDKs, advertising networks, crash
+            reporting tools, or tracking libraries.
+          </span>
+          <span data-ar>
+            لا نستخدم أي أدوات تحليل أو شبكات إعلانية أو أدوات تتبع الأعطال
+            أو مكتبات تتبع المستخدمين.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Children's Privacy</span><span data-ar>خصوصية الأطفال</span></h2>
+        <p>
+          <span data-en>
+            Deenie is suitable for all ages and does not collect any personal
+            information from any user, including children under 13. There are no
+            account sign-ups, no social features, and no personal data
+            collection.
+          </span>
+          <span data-ar>
+            تطبيق Deenie مناسب لجميع الأعمار ولا يجمع أي معلومات شخصية من أي
+            مستخدم، بما في ذلك الأطفال دون سن 13 عامًا. لا يوجد تسجيل حسابات،
+            ولا ميزات اجتماعية، ولا جمع لأي بيانات شخصية.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          <span data-en>Changes to This Policy</span>
+          <span data-ar>التغييرات على هذه السياسة</span>
+        </h2>
+        <p>
+          <span data-en>
+            If we make material changes to this Privacy Policy, we will update the
+            "Last updated" date above. We encourage you to review this page
+            periodically. Continued use of the app after changes constitutes your
+            acceptance of the updated policy.
+          </span>
+          <span data-ar>
+            إذا أجرينا تغييرات جوهرية على سياسة الخصوصية هذه، سنحدّث تاريخ
+            "آخر تحديث" أعلاه. نشجعك على مراجعة هذه الصفحة بشكل دوري. استمرارك
+            في استخدام التطبيق بعد التغييرات يُعدّ قبولًا للسياسة المحدّثة.
+          </span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Contact</span><span data-ar>التواصل</span></h2>
+        <p>
+          <span data-en>
+            If you have questions about this Privacy Policy, please contact us
+            <a href="mailto:mindofahmed@gmail.com">here</a>.
+          </span>
+          <span data-ar>
+            إذا كانت لديك أسئلة حول سياسة الخصوصية هذه، يرجى التواصل معنا
+            <a href="mailto:mindofahmed@gmail.com">هنا</a>.
+          </span>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a href="terms.html">
+          <span data-en>Terms of Service</span>
+          <span data-ar>شروط الخدمة</span>
+        </a>
+        &nbsp;·&nbsp;
+        &copy; 2026 Deenie.
+        <span data-en>All rights reserved.</span>
+        <span data-ar>جميع الحقوق محفوظة.</span>
+      </p>
+    </footer>
+
+    <script>
+      function setLang(lang) {
+        document.body.classList.toggle('ar', lang === 'ar');
+        document.documentElement.lang = lang;
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      }
+    </script>
+  </body>
+</html>

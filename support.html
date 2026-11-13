@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support — Deenie</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: #f9fafb;
+        color: #1a1a1a;
+        line-height: 1.7;
+      }
+
+      body.ar {
+        direction: rtl;
+        font-family: "Geeza Pro", "Arabic UI Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      }
+
+      header {
+        background: #1e6b4a;
+        color: #fff;
+        padding: 48px 24px 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      header .app-name {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 8px;
+      }
+
+      header h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      header p {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      .lang-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 6px;
+      }
+
+      body.ar .lang-toggle {
+        right: auto;
+        left: 20px;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 24px;
+        border: 1px solid #e5e7eb;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e6b4a;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 20px 0 6px;
+      }
+
+      h3:first-child {
+        margin-top: 0;
+      }
+
+      p {
+        margin-bottom: 12px;
+        color: #374151;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin: 12px 0 12px 20px;
+        color: #374151;
+      }
+
+      body.ar ul {
+        margin: 12px 20px 12px 0;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      a {
+        color: #1e6b4a;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        margin-top: 16px;
+        background: #1e6b4a;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 12px 28px;
+        border-radius: 99px;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+
+      .contact-btn:hover {
+        background: #165a3c;
+        text-decoration: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 13px;
+        color: #9ca3af;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      footer a {
+        color: #1e6b4a;
+      }
+
+      [data-ar] { display: none; }
+      body.ar [data-en] { display: none; }
+      body.ar [data-ar] { display: revert; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">ع</button>
+      </div>
+      <p class="app-name">Deenie</p>
+      <h1>
+        <span data-en>Support</span>
+        <span data-ar>الدعم</span>
+      </h1>
+      <p>
+        <span data-en>We're here to help</span>
+        <span data-ar>نحن هنا للمساعدة</span>
+      </p>
+    </header>
+
+    <main>
+
+      <section>
+        <h2><span data-en>Frequently Asked Questions</span><span data-ar>الأسئلة الشائعة</span></h2>
+
+        <h3><span data-en>Why is the Quran text not loading?</span><span data-ar>لماذا لا يُحمَّل نص القرآن؟</span></h3>
+        <p>
+          <span data-en>Deenie caches Quran content locally on first use. If you are opening the app for the first time, make sure you have an internet connection. After the initial load, the Quran reader works fully offline.</span>
+          <span data-ar>يقوم تطبيق Deenie بتخزين محتوى القرآن محليًا عند الاستخدام الأول. إذا كنت تفتح التطبيق للمرة الأولى، تأكد من اتصالك بالإنترنت. بعد التحميل الأولي، يعمل قارئ القرآن بالكامل دون إنترنت.</span>
+        </p>
+
+        <h3><span data-en>Why are my prayer times inaccurate?</span><span data-ar>لماذا أوقات الصلاة غير دقيقة؟</span></h3>
+        <p>
+          <span data-en>Prayer times are calculated on-device using your GPS location. Make sure location permission is granted in your device settings. You can also try changing the calculation method in the Prayer Times screen to one used by your local Islamic authority.</span>
+          <span data-ar>تُحسَب أوقات الصلاة على جهازك باستخدام موقع GPS. تأكد من منح إذن الموقع في إعدادات جهازك. يمكنك أيضًا تجربة تغيير طريقة الحساب في شاشة أوقات الصلاة إلى الطريقة المعتمدة من هيئتك الإسلامية المحلية.</span>
+        </p>
+
+        <h3><span data-en>The Qibla compass doesn't seem right. What should I do?</span><span data-ar>بوصلة القبلة لا تبدو صحيحة. ماذا أفعل؟</span></h3>
+        <p>
+          <span data-en>Compass accuracy depends on your device's magnetometer. Move away from metal objects, electronics, or magnetic cases. Follow the on-screen figure-8 calibration gesture to improve accuracy.</span>
+          <span data-ar>تعتمد دقة البوصلة على مستشعر المغناطيس في جهازك. ابتعد عن الأجسام المعدنية والأجهزة الإلكترونية والأغطية المغناطيسية. اتبع حركة الشكل الرقم 8 الموضحة على الشاشة لتحسين الدقة.</span>
+        </p>
+
+        <h3><span data-en>I lost my journal entries / bookmarks after reinstalling. Can I recover them?</span><span data-ar>فقدت مدخلات يوميتي وإشاراتي المرجعية بعد إعادة التثبيت. هل يمكن استعادتها؟</span></h3>
+        <p>
+          <span data-en>All data is stored locally on your device for privacy. Reinstalling the app deletes this data permanently. If you had iCloud or Google Drive device backup enabled before uninstalling, your data may be restorable through that backup.</span>
+          <span data-ar>جميع البيانات مخزّنة محليًا على جهازك لحماية خصوصيتك. تؤدي إعادة تثبيت التطبيق إلى حذف هذه البيانات نهائيًا. إذا كان النسخ الاحتياطي عبر iCloud أو Google Drive مفعّلًا قبل إلغاء التثبيت، فقد يمكن استعادة بياناتك من خلاله.</span>
+        </p>
+
+        <h3><span data-en>How do I change the reciter?</span><span data-ar>كيف أغيّر القارئ؟</span></h3>
+        <p>
+          <span data-en>Go to the More tab and tap "Select Reciter". Your choice is saved and applied across the entire app.</span>
+          <span data-ar>اذهب إلى تبويب "المزيد" واضغط على "اختيار القارئ". يتم حفظ اختيارك وتطبيقه في جميع أنحاء التطبيق.</span>
+        </p>
+
+        <h3><span data-en>Can I use Deenie offline?</span><span data-ar>هل يمكنني استخدام Deenie بدون إنترنت؟</span></h3>
+        <p>
+          <span data-en>Yes. After the initial content download, the Quran reader, Tajweed lessons, Journal, Athkar, Tasbeeh, and Prayer Times all work fully offline. Audio recitation and live translations require an internet connection.</span>
+          <span data-ar>نعم. بعد التنزيل الأولي للمحتوى، تعمل ميزات قارئ القرآن ودروس التجويد واليوميات والأذكار والتسبيح وأوقات الصلاة بالكامل دون إنترنت. تتطلب التلاوة الصوتية والترجمات المباشرة اتصالًا بالإنترنت.</span>
+        </p>
+      </section>
+
+      <section>
+        <h2><span data-en>Contact Us</span><span data-ar>تواصل معنا</span></h2>
+        <p>
+          <span data-en>If your question isn't answered above, or you've found a bug, we'd love to hear from you. We aim to respond within 2 business days.</span>
+          <span data-ar>إذا لم تجد إجابة لسؤالك أعلاه، أو اكتشفت خللًا في التطبيق، يسعدنا سماعك. نهدف إلى الرد خلال يومي عمل.</span>
+        </p>
+        <a class="contact-btn" href="mailto:mindofahmed@gmail.com">
+          <span data-en>Email Support</span>
+          <span data-ar>راسلنا</span>
+        </a>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>
+        <a href="privacy.html">
+          <span data-en>Privacy Policy</span>
+          <span data-ar>سياسة الخصوصية</span>
+        </a>
+        &nbsp;·&nbsp;
+        <a href="terms.html">
+          <span data-en>Terms of Service</span>
+          <span data-ar>شروط الخدمة</span>
+        </a>
+        &nbsp;·&nbsp;
+        &copy; 2026 Deenie.
+        <span data-en>All rights reserved.</span>
+        <span data-ar>جميع الحقوق محفوظة.</span>
+      </p>
+    </footer>
+
+    <script>
+      function setLang(lang) {
+        document.body.classList.toggle('ar', lang === 'ar');
+        document.documentElement.lang = lang;
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      }
+    </script>
+  </body>
+</html>
